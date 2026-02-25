@@ -45,7 +45,7 @@ const MOCK_PROFILES: Profile[] = [
     prenom: 'Dalilou',
     surnom: 'Dalilou',
     genre: 'garçon',
-    snapchat: 'dalilou974',
+    snapchat: 'dalyan974',
     instagram: 'moussadalilou',
     pays: 'France',
     ville: 'Paris',
