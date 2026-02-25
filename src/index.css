@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #facc15;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #eab308;
+  }
+
+  body {
+    @apply bg-black text-white;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(250, 204, 21, 0.05) 0%, transparent 50%),
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
+  }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(250, 204, 21, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(250, 204, 21, 0.4); }
+}
+
+@keyframes border-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.glow-effect {
+  animation: glow 3s infinite ease-in-out;
+}
+
+.animated-border-container {
+  position: relative;
+  padding: 1px;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.animated-border-bg {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #facc15
+  );
+  animation: border-rotate 4s linear infinite;
+}
+
+.animated-border-content {
+  position: relative;
+  background: #18181b; /* zinc-900 */
+  border-radius: calc(1.5rem - 1px);
+  z-index: 1;
+}
+
+.premium-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
