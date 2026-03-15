@@ -49,7 +49,7 @@ const MOCK_PROFILES: Profile[] = [
     instagram: 'moussadalilou',
     pays: 'France',
     ville: 'Paris',
-    dateNaissance: '1995-06-22',
+    dateNaissance: '22 juin',
     photoUrl: 'https://image.noelshack.com/fichiers/2026/09/3/1772036348-design-sans-titre-26.png'
   },
   {
@@ -62,8 +62,20 @@ const MOCK_PROFILES: Profile[] = [
     instagram: 'layiringo',
     pays: 'France',
     ville: 'Le Havre',
-    dateNaissance: '1998-12-06',
+    dateNaissance: '06 décembre',
     photoUrl: 'https://image.noelshack.com/fichiers/2026/09/3/1772036426-photo-2026-02-25-17-20-20.jpg'
+  },
+  {
+    id: '3',
+    nom: 'Sabiti',
+    prenom: 'Djaffar',
+    surnom: 'Djandjo',
+    genre: 'garçon',
+    snapchat: '',
+    instagram: '',
+    pays: 'France',
+    ville: 'Paris',
+    dateNaissance: '11 mars'
   }
 ];
 
@@ -595,9 +607,6 @@ const DirectoryView = ({ onBack }: { onBack: () => void }) => {
 };
 
 const ProfileCard: React.FC<{ profile: Profile }> = ({ profile }) => {
-  const birthday = new Date(profile.dateNaissance);
-  const formattedBirthday = birthday.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
-
   return (
     <div className="w-full animated-border-container">
       <div className="animated-border-bg" />
@@ -619,7 +628,7 @@ const ProfileCard: React.FC<{ profile: Profile }> = ({ profile }) => {
           <div className="flex flex-col items-center gap-1 mt-4">
             <div className="flex items-center gap-2 text-zinc-400 text-sm">
               <CalendarDays size={14} className="text-zinc-500" />
-              <span>Né(e) le {formattedBirthday}</span>
+              <span>Né(e) le {profile.dateNaissance}</span>
             </div>
             <div className="flex items-center gap-2 text-zinc-400 text-sm">
               <MapPin size={14} className="text-zinc-500" />
